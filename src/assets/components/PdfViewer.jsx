@@ -3,7 +3,7 @@ import { Box, Button, Typography, Paper } from '@mui/material';
 import { CloudUpload } from '@mui/icons-material';
 
 const PDFViewer = ({ pdfUrl }) => {
-  // If no URL is provided, show an upload state
+
   if (!pdfUrl) {
     return (
       <Box sx={{ textAlign: 'center', mt: 10 }}>
@@ -20,7 +20,7 @@ const PDFViewer = ({ pdfUrl }) => {
   return (
     <Paper sx={{ height: '80vh', mt: 2, overflow: 'hidden' }}>
       <iframe
-        src={`${pdfUrl}#toolbar=0`} // #toolbar=0 hides the default browser UI
+        src={`${pdfUrl}#toolbar=0`} 
         width="100%"
         height="100%"
         style={{ border: 'none' }}

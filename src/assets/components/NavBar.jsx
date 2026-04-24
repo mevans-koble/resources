@@ -37,7 +37,7 @@ const Navbar = ({ mobileOpen, onDrawerToggle, onSideMenuClick }) => {
 
   return (
     <>
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: '#1f3a30' }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -53,14 +53,14 @@ const Navbar = ({ mobileOpen, onDrawerToggle, onSideMenuClick }) => {
         </Toolbar>
       </AppBar>
 
-      <Box component="nav">
+      <Box component="nav" sx={{backgroundColor: 'red'}}>
         <Drawer
           variant="temporary"
           open={mobileOpen}
           onClose={onDrawerToggle}
           ModalProps={{ keepMounted: true }}
           sx={{
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth,backgroundColor: '#95ab63' },
           }}
         >
           {/* {drawerContent} */}

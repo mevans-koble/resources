@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Box, CssBaseline, Toolbar } from '@mui/material';
+import { Box, Container, CssBaseline, Toolbar } from '@mui/material';
 import Navbar from './assets/components/Navbar';
 import Editor from './assets/components/Editor';
-import PDFViewer from './assets/components/PdfViewer';
+import PDFViewer from './assets/components/PDFViewer';
 
 export default function App() {
   const [view, setView] = useState('doc');
@@ -18,15 +18,16 @@ export default function App() {
   };
 
   return (
-    <div sx={{ display: 'flex' }}>
-      <CssBaseline />
+    <div sx={{ display: 'flex', height:'100%' }}>
       
-
       <Navbar 
         mobileOpen={mobileOpen} 
         onDrawerToggle={handleDrawerToggle} 
         onSideMenuClick={handleSideMenuClick} 
       />
+      <Box style={{height:'100% '}} >
+      <div style={{height:"100%"}}>Test</div>
+      </Box>
 
     </div>
   );
