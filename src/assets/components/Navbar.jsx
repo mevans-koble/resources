@@ -16,6 +16,7 @@ import DevicesIcon from '@mui/icons-material/Devices';
 import SchoolIcon from '@mui/icons-material/School';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import { Link, useLocation } from 'react-router-dom';
+import koble from '../../koble.png';
 
 const drawerWidth = 240;
 
@@ -27,6 +28,7 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
 
   const handleKobleToggle = () => setOpenKoble(!openKoble);
   const handleGTMToggle = () => setOpenGTM(!openGTM);
+  const Logo = koble;
 
   const drawerContent = (
     <div>
@@ -188,24 +190,26 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
             <MenuIcon />
           </IconButton>
           
-          {/* Clickable Branding in AppBar */}
           <MuiLink 
             component={Link} 
             to="/" 
             underline="none" 
-            sx={{ display: 'flex', alignItems: 'center', color: 'inherit' }}
+            sx={{ display: 'flex', alignItems: 'center' }}
           >
-            <Typography 
-              variant="h6" 
-              noWrap 
-              sx={{ 
-                letterSpacing: '0.5px',
+            <Box
+              component="img"
+              src={Logo}
+              alt="Koble Resource Hub"
+              sx={{
+                height: { xs: '20px', md: '30px' }, // Scales for mobile vs desktop
+                width: 'auto',
                 transition: '0.2s',
-                '&:hover': { opacity: 0.8 }
+                '&:hover': { 
+                  opacity: 0.8,
+                  transform: 'scale(1.02)' // Subtle "pop" on hover
+                }
               }}
-            >
-              Resource Hub
-            </Typography>
+            />
           </MuiLink>
         </Toolbar>
       </AppBar>
