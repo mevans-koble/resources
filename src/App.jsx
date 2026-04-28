@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Box, CssBaseline, Toolbar } from '@mui/material';
-import Navbar from './assets/components/Navbar';
-import Footer from './assets/components/Footer';
+import Navbar from './assets/components/Navbar.jsx';
+import Footer from './assets/components/Footer.jsx';
 import Home from './assets/info/Home';
 import Connect from './assets/info/KobleConnect/Connect';
 import Mission from './assets/info/KobleConnect/Mission';
