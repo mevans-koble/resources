@@ -140,8 +140,9 @@ const Tools = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 transition: '0.3s',
-                '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }
-              }}
+                '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' },
+                
+            }}
             >
               <CardContent sx={{ flexGrow: 1, p: 3 }}>
                 <Box sx={{ mb: 2, display: 'flex', justifyContent: 'center' }}>

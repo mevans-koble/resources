@@ -23,6 +23,13 @@ import Tools from './assets/info/Tools';
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  
+  // 1. Dark Mode State Logic
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => !prev);
+  };
 
   return (
     <Router>
@@ -33,13 +40,14 @@ export default function App() {
         overflow: 'hidden' 
       }}>
         <CssBaseline />
-        
   
+        {/* Pass darkMode props to Navbar if you want to add a toggle icon there */}
         <Navbar 
           mobileOpen={mobileOpen} 
           onDrawerToggle={() => setMobileOpen(!mobileOpen)} 
+          darkMode={darkMode}
+          onToggleDark={toggleDarkMode}
         />
-
    
         <Box
           component="main"
@@ -48,15 +56,17 @@ export default function App() {
             overflowY: 'auto', 
             display: 'flex',
             flexDirection: 'column',
-            backgroundColor: '#ffffff'
+            // 2. Dark Mode Conditional Styling (Isolated to the middle)
+            backgroundColor: darkMode ? '#121212' : '#ffffff',
+            color: darkMode ? '#ffffff' : '#000000',
+            transition: 'background-color 0.3s ease, color 0.3s ease'
           }}
         >
-     
           <Toolbar /> 
           
           <Box sx={{ p: 3, flexGrow: 1 }}>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home darkMode={darkMode} />} />
               <Route path="/about" element={<Connect />} /> 
               <Route path="/mission" element={<Mission />} /> 
               <Route path="/peopleprinciples" element={<PeoplePrinciples />} />
@@ -64,22 +74,19 @@ export default function App() {
               <Route path="/customers" element={<Customers />} />
               <Route path="/roles" element={<Roles />} />
               <Route path="/history" element={<History />} />
-              <Route path="/glossary" element={<Glossary />} />
+              <Route path="/glossary" element={<Glossary darkMode={darkMode} />} />
               <Route path="/business" element={<BusinessProcess />} />
               <Route path="/gtm-overview" element={<Overview />} />
               <Route path="/gtm-devicesupport" element={<DeviceSupport />} />
               <Route path="/gtm-compland" element={<CompLand />} /> 
               <Route path="/gtm-strengths" element={<Strengths />} />
               <Route path="/customizations" element={<Customizations />} />
-              <Route path="/knowledge" element={<KnowledgeBase />} />
-              <Route path="/tools" element={<Tools />} />
-
-
+              <Route path="/knowledge" element={<KnowledgeBase darkMode={darkMode} />} />
+              <Route path="/tools" element={<Tools darkMode={darkMode} />} />
             </Routes>
           </Box>
         </Box>
 
-    
         <Footer sx={{ flexShrink: 0 }} />
       </Box>
     </Router>

@@ -7,7 +7,7 @@ import {
 import { 
   Description, Menu as MenuIcon, ExpandLess, ExpandMore, 
   Info, Stars, AccountTree, Home, Gavel, Public, 
-  MenuBook, BusinessCenter, HistoryEdu
+  MenuBook, BusinessCenter, HistoryEdu, Brightness4, Brightness7
 } from '@mui/icons-material';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
@@ -20,7 +20,8 @@ import koble from '../../koble.png';
 
 const drawerWidth = 240;
 
-const Navbar = ({ mobileOpen, onDrawerToggle }) => {
+// Destructure darkMode and onToggleDark from props
+const Navbar = ({ mobileOpen, onDrawerToggle, darkMode, onToggleDark }) => {
   const location = useLocation();
   
   const [openKoble, setOpenKoble] = useState(false);
@@ -201,16 +202,24 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
               src={Logo}
               alt="Koble Resource Hub"
               sx={{
-                height: { xs: '20px', md: '30px' }, // Scales for mobile vs desktop
+                height: { xs: '20px', md: '30px' },
                 width: 'auto',
                 transition: '0.2s',
                 '&:hover': { 
                   opacity: 0.8,
-                  transform: 'scale(1.02)' // Subtle "pop" on hover
+                  transform: 'scale(1.02)'
                 }
               }}
             />
           </MuiLink>
+
+          {/* This Box acts as a spacer to push the toggle to the right */}
+          <Box sx={{ flexGrow: 1 }} />
+
+          {/* Dark Mode Toggle Button */}
+          <IconButton onClick={onToggleDark} color="inherit">
+            {darkMode ? <Brightness7 /> : <Brightness4 />}
+          </IconButton>
         </Toolbar>
       </AppBar>
 
