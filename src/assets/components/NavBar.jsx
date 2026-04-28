@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { 
   Box, Drawer, AppBar, Toolbar, List, Typography, 
   ListItem, ListItemButton, ListItemIcon, ListItemText, 
-  IconButton, Divider, Collapse
+  IconButton, Divider, Collapse, Link as MuiLink
 } from '@mui/material';
 import { 
-  Description, PictureAsPdf, Menu as MenuIcon, 
-  ExpandLess, ExpandMore, Info, Stars, AccountTree, Home,
-  Gavel, Public, Handshake, MenuBook, BusinessCenter, HistoryEdu
+  Description, Menu as MenuIcon, ExpandLess, ExpandMore, 
+  Info, Stars, AccountTree, Home, Gavel, Public, 
+  MenuBook, BusinessCenter, HistoryEdu
 } from '@mui/icons-material';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
@@ -31,9 +31,27 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
   const drawerContent = (
     <div>
       <Toolbar>
-        <Typography variant="h6" color="primary" sx={{ fontWeight: 'bold' }}>
-          Resource Hub
-        </Typography>
+        {/* Clickable Branding in Sidebar */}
+        <MuiLink 
+          component={Link} 
+          to="/" 
+          underline="none" 
+          onClick={onDrawerToggle}
+          sx={{ display: 'flex', alignItems: 'center' }}
+        >
+          <Typography 
+            variant="h6" 
+            color="primary" 
+            sx={{ 
+              fontWeight: '800', 
+              letterSpacing: '0.5px',
+              transition: '0.2s',
+              '&:hover': { opacity: 0.7 }
+            }}
+          >
+            Resource Hub
+          </Typography>
+        </MuiLink>
       </Toolbar>
       <Divider />
       <List>
@@ -49,7 +67,7 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
           </ListItemButton>
         </ListItem>
 
-          <Divider sx={{ my: 1 }} />
+        <Divider sx={{ my: 1 }} />
         
         <ListItem disablePadding>
           <ListItemButton 
@@ -62,7 +80,7 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
           </ListItemButton>
         </ListItem>
 
-          <Divider sx={{ my: 1 }} />
+        <Divider sx={{ my: 1 }} />
         
         <ListItem disablePadding>
           <ListItemButton 
@@ -75,9 +93,9 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
           </ListItemButton>
         </ListItem>
 
-          <Divider sx={{ my: 1 }} />
+        <Divider sx={{ my: 1 }} />
 
-          <ListItem disablePadding>
+        <ListItem disablePadding>
           <ListItemButton 
             component={Link} to="/customizations" 
             onClick={onDrawerToggle}
@@ -88,7 +106,7 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
           </ListItemButton>
         </ListItem>
 
-          <Divider sx={{ my: 1 }} />
+        <Divider sx={{ my: 1 }} />
 
         {/* SECTION 1: KOBLE CONNECT */}
         <ListItem disablePadding sx={{ display: 'block' }}>
@@ -159,8 +177,6 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
         </ListItem>
 
         <Divider sx={{ my: 1 }} />
-
-      
       </List>
     </div>
   );
@@ -172,7 +188,26 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
           <IconButton color="inherit" edge="start" onClick={onDrawerToggle} sx={{ mr: 2 }}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>Resource Hub</Typography>
+          
+          {/* Clickable Branding in AppBar */}
+          <MuiLink 
+            component={Link} 
+            to="/" 
+            underline="none" 
+            sx={{ display: 'flex', alignItems: 'center', color: 'inherit' }}
+          >
+            <Typography 
+              variant="h6" 
+              noWrap 
+              sx={{ 
+                letterSpacing: '0.5px',
+                transition: '0.2s',
+                '&:hover': { opacity: 0.8 }
+              }}
+            >
+              Resource Hub
+            </Typography>
+          </MuiLink>
         </Toolbar>
       </AppBar>
 
