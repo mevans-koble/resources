@@ -5,49 +5,60 @@ import {
   CardActionArea, Stack, Paper, Divider, Chip 
 } from '@mui/material';
 import { 
-  Description, Gavel, MenuBook, AccountTree, 
-  Verified, AutoFixHigh, LibraryBooks, Settings
+  Description, 
+  Build, 
+  LibraryBooks, 
+  MenuBook, 
+  AccountTree, 
+  CompareArrows, 
+  AutoFixHigh,
+  Explore
 } from '@mui/icons-material';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 
 const Home = () => {
-  // Main Categories - easy to add more here
+  // Main Pillars: Knowledge, Koble Connect, Tools
   const sections = [
+    {
+      title: "Knowledge Base",
+      subtitle: "Research & Documentation",
+      desc: "Centralized access to EBMS guides, Boggle, SharePoint libraries, and team OneNote.",
+      path: "/resources",
+      icon: <LibraryBooks sx={{ fontSize: 32 }} />,
+      color: "#2c5282" // Professional Blue
+    },
+     {
+      title: "System Tools",
+      subtitle: "Active Portals",
+      desc: "Direct links to Salesforce, Landis, Cloudflare, Azure Repos, and API monitoring.",
+      path: "/tools",
+      icon: <Build sx={{ fontSize: 32 }} />,
+      color: "#95ab63" // Koble Light Green
+    },
     {
       title: "Koble Connect",
       subtitle: "Internal Culture",
-      desc: "Mission, Pillars, and People Principles that define who we are.",
+      desc: "Our mission, people principles, and the history that defines our company identity.",
       path: "/about",
       icon: <Description sx={{ fontSize: 32 }} />,
-      color: "#1f3a30"
+      color: "#1f3a30" // Koble Dark Green
     },
-    {
-      title: "Anabaptist GTM",
-      subtitle: "Market Strategy",
-      desc: "Strategy, competitive landscape, and strengths for the Anabaptist segment.",
-      path: "/gtm-overview",
-      icon: <Gavel sx={{ fontSize: 32 }} />,
-      color: "#95ab63"
-    },
-    {
-      title: "Documentation",
-      subtitle: "Technical & Ops",
-      desc: "Standard Operating Procedures, technical guides, and system manuals.",
-      path: "/docs", // Future path
-      icon: <LibraryBooks sx={{ fontSize: 32 }} />,
-      color: "#2c5282" // Blue tone to differentiate
-    }
+   
   ];
 
+  // Updated Quick Links for GTM Strategy and Utilities
   const quickLinks = [
-    { title: "Glossary", path: "/glossary", icon: <MenuBook /> },
-    { title: "Processes", path: "/business", icon: <AccountTree /> },
-    { title: "Strengths", path: "/gtm-strengths", icon: <Verified /> },
-    { title: "Customizations", path: "/customizations", icon: <AutoFixHigh /> },
+      { title: "Glossary", path: "/glossary", icon: <MenuBook /> },
+      { title: "People and Principles", path: "/peopleprinciples", icon: <PeopleAltIcon /> },
+      { title: "Products", path: "/products", icon: <Explore /> },
+      { title: "Competitors", path: "/gtm-compland", icon: <CompareArrows /> },
+      { title: "Strengths", path: "/gtm-strengths", icon: <FitnessCenterIcon /> },
   ];
 
   return (
     <Container maxWidth="lg" sx={{ mt: 8, mb: 8 }}>
-      {/* HEADER SECTION */}
+      {/* HEADER SECTION - Centered Standard */}
       <Box sx={{ 
         textAlign: 'center', 
         mb: 8, 
@@ -58,9 +69,9 @@ const Home = () => {
         <Typography variant="h2" fontWeight="800" color="#1f3a30" gutterBottom sx={{ fontSize: { xs: '2.5rem', md: '3.75rem' } }}>
           Resource Hub
         </Typography>
-        <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 700, lineHeight: 1.6 }}>
+        <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 750, lineHeight: 1.6 }}>
           The centralized intelligence center for Koble Systems. 
-          Access internal culture, market strategy, and technical resources.
+          Manage your tools, access shared knowledge, and connect with our culture.
         </Typography>
       </Box>
 
@@ -110,13 +121,12 @@ const Home = () => {
         ))}
       </Grid>
 
-      {/* QUICK ACCESS TOOLS */}
       <Box sx={{ width: '100%' }}>
         <Divider sx={{ mb: 6 }}>
-          <Chip label="UTILITIES & QUICK LINKS" sx={{ fontWeight: 'bold', color: '#1f3a30', px: 2 }} />
+          <Chip label="STRATEGY & QUICK ACCESS" sx={{ fontWeight: 'bold', color: '#1f3a30', px: 2 }} />
         </Divider>
 
-        <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={3} justifyContent="center" sx={{justifyContent: 'center'}}>
           {quickLinks.map((link, i) => (
             <Grid item xs={6} sm={3} key={i} sx={{ display: 'flex', justifyContent: 'center' }}>
               <Paper
@@ -124,7 +134,7 @@ const Home = () => {
                 to={link.path}
                 variant="outlined"
                 sx={{
-                  width: '100%',
+                  width: '150px',
                   maxWidth: 200,
                   p: 3,
                   textAlign: 'center',

@@ -19,6 +19,7 @@ import CompLand from './assets/info/AnabaptistGTM/CompLand';
 import Strengths from './assets/info/AnabaptistGTM/Strengths';
 import Customizations from './assets/info/KobleConnect/Customizations';
 import KnowledgeBase from './assets/info/KnowledgeBase';
+import Tools from './assets/info/Tools';
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -71,6 +72,8 @@ export default function App() {
               <Route path="/gtm-strengths" element={<Strengths />} />
               <Route path="/customizations" element={<Customizations />} />
               <Route path="/knowledge" element={<KnowledgeBase />} />
+              <Route path="/tools" element={<Tools />} />
+
 
             </Routes>
           </Box>

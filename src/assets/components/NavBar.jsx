@@ -14,6 +14,7 @@ import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import LandscapeIcon from '@mui/icons-material/Landscape';
 import DevicesIcon from '@mui/icons-material/Devices';
 import SchoolIcon from '@mui/icons-material/School';
+import ConstructionIcon from '@mui/icons-material/Construction';
 import { Link, useLocation } from 'react-router-dom';
 
 const drawerWidth = 240;
@@ -58,6 +59,19 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
           >
             <ListItemIcon><SchoolIcon /></ListItemIcon>
             <ListItemText primary="Knowledge" />
+          </ListItemButton>
+        </ListItem>
+
+          <Divider sx={{ my: 1 }} />
+        
+        <ListItem disablePadding>
+          <ListItemButton 
+            component={Link} to="/tools" 
+            onClick={onDrawerToggle}
+            selected={location.pathname === '/tools'}
+          >
+            <ListItemIcon><ConstructionIcon /></ListItemIcon>
+            <ListItemText primary="Tools" />
           </ListItemButton>
         </ListItem>
 
