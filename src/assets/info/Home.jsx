@@ -123,7 +123,7 @@ const Home = () => {
 
       <Box sx={{ width: '100%' }}>
         <Divider sx={{ mb: 6 }}>
-          <Chip label="STRATEGY & QUICK ACCESS" sx={{ fontWeight: 'bold', color: '#1f3a30', px: 2 }} />
+          <Chip label="Quick Links" sx={{ fontWeight: 'bold', color: '#1f3a30', px: 2 }} />
         </Divider>
 
         <Grid container spacing={3} justifyContent="center" sx={{justifyContent: 'center'}}>
