@@ -24,7 +24,7 @@ const Home = () => {
       title: "Knowledge Base",
       subtitle: "Research & Documentation",
       desc: "Centralized access to EBMS guides, Boggle, SharePoint libraries, and team OneNote.",
-      path: "/resources",
+      path: "/knowledge",
       icon: <LibraryBooks sx={{ fontSize: 32 }} />,
       color: "#2c5282" // Professional Blue
     },
