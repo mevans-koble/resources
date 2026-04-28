@@ -73,17 +73,14 @@ const Products = () => {
                 '&:hover': { boxShadow: '0 4px 20px rgba(0,0,0,0.08)' },
                 overflow: 'visible',
                 position: 'relative',
-               
               }}
             >
-              <CardContent sx={{ p: 4,  }}>
-                <Grid container spacing={4} alignItems="center">
-                  <Grid item xs={12} md={1} sx={{ display: 'flex', justifyContent: 'center' }}>
-                    {product.icon}
-                  </Grid>
+              <CardContent sx={{ p: 4, }}>
+                <Grid container spacing={4} alignItems="center"  >
+                 
                   
-                  <Grid item xs={12} md={7}>
-                    <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+                  <Grid item xs={12} md={7} >
+                    <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1, }}>
                       <Typography variant="h4" fontWeight="bold" color="#1f3a30">
                         {product.title}
                       </Typography>

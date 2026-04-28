@@ -12,9 +12,9 @@ import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 const StrengthBlock = ({ icon, title, description, testimonial, author, company, color = "#1f3a30" }) => (
   <Box sx={{ mb: 10, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
     <Stack direction="column" alignItems="center" spacing={2} sx={{ textAlign: 'center', mb: 4 }}>
-      <Box sx={{ p: 2, bgcolor: `${color}15`, color: color, borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
+      {/* <Box sx={{ p: 2, bgcolor: `${color}15`, color: color, borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
         {icon}
-      </Box>
+      </Box> */}
       <Typography variant="h4" fontWeight="bold" color="#1f3a30">
         {title}
       </Typography>
