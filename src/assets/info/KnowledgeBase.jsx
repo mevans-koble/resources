@@ -127,7 +127,7 @@ const KnowledgeBase = () => {
       <Paper sx={{ mt: 8, p: 3, bgcolor: '#f4f7f4', borderRadius: 4, textAlign: 'center', border: '1px dashed #ccc' }}>
         <Typography variant="body2" color="text.secondary">
           <strong>Note:</strong> Some resources (SharePoint, OneNote, Boggle) require internal authentication. 
-          Ensure you are logged into your <strong>Koble Systems / ESH</strong> account to gain access.
+          Ensure you are logged into your <strong>Koble Systems</strong> account to gain access.
         </Typography>
       </Paper>
     </Container>
