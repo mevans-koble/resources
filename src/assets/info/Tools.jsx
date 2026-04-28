@@ -11,8 +11,14 @@ import {
   Code, 
   Hub, 
   Security, 
-  SettingsSuggest 
+  SettingsSuggest,
+  AdminPanelSettings
 } from '@mui/icons-material';
+import PaymentsIcon from '@mui/icons-material/Payments';
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
+import LockPersonIcon from '@mui/icons-material/LockPerson';
 
 const Tools = () => {
   const tools = [
@@ -20,7 +26,7 @@ const Tools = () => {
       title: "Salesforce",
       desc: "Primary CRM for managing customer relationships, leads, and sales pipelines.",
       link: "https://koblesystems.lightning.force.com/lightning/page/home",
-      icon: <Hub sx={{ color: '#00a1e0' }} />, // Salesforce Blue
+      icon: <Hub sx={{ color: '#00a1e0' }} />, 
       tag: "CRM"
     },
     {
@@ -29,6 +35,13 @@ const Tools = () => {
       link: "https://cc.landis.cloud/app/main/dashboard",
       icon: <Cloud sx={{ color: '#0078d4' }} />,
       tag: "Cloud Ops"
+    },
+    {
+      title: "Passportal",
+      desc: "Secure credential management and documentation vault for storing and sharing sensitive system passwords.",
+      link: "https://us-clover.passportalmsp.com/dashboard#/default",
+      icon: <LockPersonIcon sx={{ color: '#00c853' }} />, 
+      tag: "Security"
     },
     {
       title: "Fizzy",
@@ -55,9 +68,45 @@ const Tools = () => {
       title: "CloudFlare",
       desc: "Network security and connector management for the Koble infrastructure.",
       link: "https://dash.cloudflare.com/ece11a7c891e7956b6188b74460d5ec3/one/networks/connectors",
-      icon: <Security sx={{ color: '#f38020' }} />, // Cloudflare Orange
+      icon: <Security sx={{ color: '#f38020' }} />, 
       tag: "Security"
     },
+    {
+      title: "Koble Payments Portal",
+      desc: "User-facing dashboard for managing transactions, payment methods, and account billing history.",
+      link: "https://paymentsportal.koblesystems.com/login?last=%2Fdashboard",
+      icon: <PaymentsIcon sx={{ color: '#2e7d32' }} />, 
+      tag: "Payments"
+    },
+    {
+      title: "Koble Payments Admin Console",
+      desc: "Backend administrative interface for managing client payment accounts and processing configurations.",
+      link: "https://webpay.koblesystems.com/ClientAdmin/login",
+      icon: <AdminPanelSettings sx={{ color: '#1f3a30' }} />, 
+      tag: "Admin"
+    },
+    {
+      title: "Verifone Portal (Internal)",
+      desc: "Corporate-level gateway for managing Verifone hardware, encryption keys, and internal device deployments.",
+      link: "https://corporateportal.vfipayna.com/",
+      icon: <VpnKeyIcon sx={{ color: '#0078d4' }} />,
+      tag: "Gateway"
+    },
+    {
+      title: "Verifone Portal (Client)",
+      desc: "Client-side access for merchants to manage their specific Verifone hardware and storefront transaction data.",
+      link: "https://storeportal.vfipayna.com/",
+      icon: <StorefrontIcon sx={{ color: '#9c27b0' }} />, 
+      tag: "Merchant"
+    },
+    {
+      title: "Verifone Web Pay Admin",
+      desc: "Administrative portal for managing legacy Web Pay integrations and client-specific transaction settings.",
+      link: "https://webpay.eaglebusinesssoftware.com/clientadmin/login",
+      icon: <PointOfSaleIcon sx={{ color: '#f38020' }} />, 
+      tag: "Processing"
+    },
+    
     {
       title: "Azure Repo",
       desc: "Version control and source code management for EBMS-2XX development.",

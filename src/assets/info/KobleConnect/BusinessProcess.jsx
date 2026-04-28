@@ -48,7 +48,6 @@ const ProcessCard = ({ title, description, link, icon, steps, color }) => (
         <Typography variant="caption" fontWeight="bold" sx={{ textTransform: 'uppercase', color: 'text.disabled', display: 'block', mb: 1 }}>
           Key Elements:
         </Typography>
-        {/* This stack ensures the bullet points themselves are centered */}
         <Stack spacing={1} alignItems="center">
           {steps.map((step, i) => (
             <Stack key={i} direction="row" spacing={1} alignItems="center">

@@ -31,7 +31,6 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
   const drawerContent = (
     <div>
       <Toolbar>
-        {/* Clickable Branding in Sidebar */}
         <MuiLink 
           component={Link} 
           to="/" 

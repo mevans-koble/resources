@@ -52,7 +52,6 @@ const KnowledgeBase = () => {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 5, mb: 8 }}>
-      {/* HEADER - Centered Standard */}
       <Box sx={{ mb: 8, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
         <LibraryBooks sx={{ fontSize: 48, color: '#1f3a30', mb: 2 }} />
         <Typography variant="h3" fontWeight="800" color="#1f3a30" gutterBottom>
@@ -64,7 +63,6 @@ const KnowledgeBase = () => {
         </Typography>
       </Box>
 
-      {/* RESOURCE CARDS - Centered Grid */}
       <Grid container spacing={4} justifyContent="center">
         {resources.map((resource, i) => (
           <Grid item xs={12} sm={6} md={4} key={i} sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -126,7 +124,6 @@ const KnowledgeBase = () => {
         ))}
       </Grid>
 
-      {/* FOOTER NOTE - Centered */}
       <Paper sx={{ mt: 8, p: 3, bgcolor: '#f4f7f4', borderRadius: 4, textAlign: 'center', border: '1px dashed #ccc' }}>
         <Typography variant="body2" color="text.secondary">
           <strong>Note:</strong> Some resources (SharePoint, OneNote, Boggle) require internal authentication. 

@@ -18,7 +18,6 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 
 const Home = () => {
-  // Main Pillars: Knowledge, Koble Connect, Tools
   const sections = [
     {
       title: "Knowledge Base",
@@ -47,7 +46,6 @@ const Home = () => {
    
   ];
 
-  // Updated Quick Links for GTM Strategy and Utilities
   const quickLinks = [
       { title: "Glossary", path: "/glossary", icon: <MenuBook /> },
       { title: "People and Principles", path: "/peopleprinciples", icon: <PeopleAltIcon /> },
@@ -58,7 +56,6 @@ const Home = () => {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 8, mb: 8 }}>
-      {/* HEADER SECTION - Centered Standard */}
       <Box sx={{ 
         textAlign: 'center', 
         mb: 8, 
@@ -75,7 +72,6 @@ const Home = () => {
         </Typography>
       </Box>
 
-      {/* MAIN NAVIGATION PILLARS */}
       <Grid container spacing={4} justifyContent="center" sx={{ mb: 10 }}>
         {sections.map((pillar, i) => (
           <Grid item xs={12} sm={6} md={4} key={i} sx={{ display: 'flex', justifyContent: 'center' }}>

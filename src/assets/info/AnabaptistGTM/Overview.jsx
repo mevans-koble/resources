@@ -96,13 +96,11 @@ const GTMOverview = () => {
 
       <Divider sx={{ mb: 8 }} />
 
-      {/* VERTICALS FOCUS */}
       <Typography variant="h4" fontWeight="bold" textAlign="center" sx={{ mb: 4 }}>
         Vertical Focus
       </Typography>
       
       <Grid container spacing={4} sx={{ mb: 8 }}>
-        {/* DISCRETE MANUFACTURING */}
         <Grid item xs={12} md={6}>
           <Card variant="outlined" sx={{ height: '100%', borderRadius: 4 }}>
             <CardContent>
@@ -127,7 +125,6 @@ const GTMOverview = () => {
           </Card>
         </Grid>
 
-        {/* BUILDING SUPPLY */}
         <Grid item xs={12} md={6}>
           <Card variant="outlined" sx={{ height: '100%', borderRadius: 4 }}>
             <CardContent>
@@ -153,7 +150,6 @@ const GTMOverview = () => {
         </Grid>
       </Grid>
 
-      {/* PRICING QUICK-LOOK */}
       <Paper sx={{ p: 4, bgcolor: '#1f3a30', color: 'white', borderRadius: 4 }}>
         <Typography variant="h5" fontWeight="bold" gutterBottom>
           Pricing Structure
