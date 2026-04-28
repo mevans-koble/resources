@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Box, CssBaseline, Toolbar } from '@mui/material';
 import Navbar from './assets/components/Navbar';
 import Footer from './assets/components/Footer';
+import Home from './assets/info/Home';
 import Connect from './assets/info/KobleConnect/Connect';
 import Mission from './assets/info/KobleConnect/Mission';
 import PeoplePrinciples from './assets/info/KobleConnect/PeoplePrinciples';
@@ -17,6 +18,7 @@ import DeviceSupport from './assets/info/AnabaptistGTM/DeviceSupport';
 import CompLand from './assets/info/AnabaptistGTM/CompLand';
 import Strengths from './assets/info/AnabaptistGTM/Strengths';
 import Customizations from './assets/info/KobleConnect/Customizations';
+import KnowledgeBase from './assets/info/KnowledgeBase';
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -53,6 +55,7 @@ export default function App() {
           
           <Box sx={{ p: 3, flexGrow: 1 }}>
             <Routes>
+              <Route path="/" element={<Home />} />
               <Route path="/about" element={<Connect />} /> 
               <Route path="/mission" element={<Mission />} /> 
               <Route path="/peopleprinciples" element={<PeoplePrinciples />} />
@@ -67,6 +70,8 @@ export default function App() {
               <Route path="/gtm-compland" element={<CompLand />} /> 
               <Route path="/gtm-strengths" element={<Strengths />} />
               <Route path="/customizations" element={<Customizations />} />
+              <Route path="/knowledge" element={<KnowledgeBase />} />
+
             </Routes>
           </Box>
         </Box>

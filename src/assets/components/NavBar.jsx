@@ -13,6 +13,7 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import LandscapeIcon from '@mui/icons-material/Landscape';
 import DevicesIcon from '@mui/icons-material/Devices';
+import SchoolIcon from '@mui/icons-material/School';
 import { Link, useLocation } from 'react-router-dom';
 
 const drawerWidth = 240;
@@ -46,6 +47,34 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
             <ListItemText primary="Home" />
           </ListItemButton>
         </ListItem>
+
+          <Divider sx={{ my: 1 }} />
+        
+        <ListItem disablePadding>
+          <ListItemButton 
+            component={Link} to="/knowledge" 
+            onClick={onDrawerToggle}
+            selected={location.pathname === '/knowledge'}
+          >
+            <ListItemIcon><SchoolIcon /></ListItemIcon>
+            <ListItemText primary="Knowledge" />
+          </ListItemButton>
+        </ListItem>
+
+          <Divider sx={{ my: 1 }} />
+
+          <ListItem disablePadding>
+          <ListItemButton 
+            component={Link} to="/customizations" 
+            onClick={onDrawerToggle}
+            selected={location.pathname === '/customizations'}
+          >
+            <ListItemIcon><AutoAwesomeIcon /></ListItemIcon>
+            <ListItemText primary="Customizations" />
+          </ListItemButton>
+        </ListItem>
+
+          <Divider sx={{ my: 1 }} />
 
         {/* SECTION 1: KOBLE CONNECT */}
         <ListItem disablePadding sx={{ display: 'block' }}>
@@ -117,16 +146,7 @@ const Navbar = ({ mobileOpen, onDrawerToggle }) => {
 
         <Divider sx={{ my: 1 }} />
 
-        <ListItem disablePadding>
-          <ListItemButton 
-            component={Link} to="/customizations" 
-            onClick={onDrawerToggle}
-            selected={location.pathname === '/customizations'}
-          >
-            <ListItemIcon><AutoAwesomeIcon /></ListItemIcon>
-            <ListItemText primary="Customizations" />
-          </ListItemButton>
-        </ListItem>
+      
       </List>
     </div>
   );
