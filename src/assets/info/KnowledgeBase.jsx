@@ -11,7 +11,7 @@ import {
   Assignment 
 } from '@mui/icons-material';
 
-const KnowledgeBase = () => {
+const KnowledgeBase = ({darkMode}) => {
   const resources = [
     {
       title: "EBMS Knowledge Base",
@@ -63,68 +63,80 @@ const KnowledgeBase = () => {
         </Typography>
       </Box>
 
-      <Grid container spacing={4} justifyContent="center">
-        {resources.map((resource, i) => (
-          <Grid item xs={12} sm={6} md={4} key={i} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Card 
-              variant="outlined" 
-              sx={{ 
-                width: '100%', 
-                maxWidth: 340, 
-                borderRadius: 4, 
-                textAlign: 'center',
-                display: 'flex',
-                flexDirection: 'column',
-                transition: '0.3s',
-                '&:hover': { transform: 'translateY(-5px)', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' }
-              }}
-            >
-              <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                <Box sx={{ mb: 2, display: 'flex', justifyContent: 'center' }}>
-                  <Box sx={{ p: 2, bgcolor: '#f4f7f4', borderRadius: '50%' }}>
-                    {resource.icon}
-                  </Box>
-                </Box>
-                
-                <Typography variant="h6" fontWeight="bold" gutterBottom color="#1f3a30">
-                  {resource.title}
-                </Typography>
-                
-                <Typography variant="caption" sx={{ bgcolor: '#e8f0e6', px: 1.5, py: 0.5, borderRadius: 1, fontWeight: 'bold', mb: 2, display: 'inline-block' }}>
-                  {resource.tag}
-                </Typography>
+      <Box 
+  sx={{ 
+    display: 'flex', 
+    flexWrap: 'wrap', 
+    justifyContent: 'center', // This forces the centering on all rows
+    gap: 4, // This handles the spacing between cards
+    mt: 4 
+  }}
+>
+  {resources.map((resource, i) => (
+    <Card 
+      key={i}
+      variant="outlined" 
+      sx={{ 
+        width: 340, 
+        borderRadius: 4, 
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        bgcolor: darkMode ? '#b9b8b8' : '#ffffff',
+    
+        color: darkMode ? 'black' : 'inherit',
+        transition: '0.3s',
+        '&:hover': { 
+          transform: 'translateY(-5px)', 
+          boxShadow: '0 8px 24px rgba(0,0,0,0.1)' 
+        }
+      }}
+    >
+      <CardContent sx={{ flexGrow: 1, p: 3 }}>
+        <Box sx={{ mb: 2, display: 'flex', justifyContent: 'center' }}>
+          <Box sx={{ p: 2, bgcolor: darkMode ? '#3d3d3d' : '#f4f7f4', borderRadius: '50%' }}>
+            {resource.icon}
+          </Box>
+        </Box>
+        
+        <Typography variant="h6" fontWeight="bold" gutterBottom>
+          {resource.title}
+        </Typography>
+        
+        <Typography 
+          variant="caption" 
+          sx={{ 
+            bgcolor: darkMode ? '#1f3a30' : '#e8f0e6', 
+            color: darkMode ? '#ffffff' : '#1f3a30',
+            px: 1.5, py: 0.5, borderRadius: 1, fontWeight: 'bold', mb: 2, display: 'inline-block' 
+          }}
+        >
+          {resource.tag}
+        </Typography>
 
-                <Typography variant="body2" color="text.secondary" sx={{ mt: 2, lineHeight: 1.6 }}>
-                  {resource.desc}
-                </Typography>
-              </CardContent>
+        <Typography variant="body2" sx={{ mt: 2, lineHeight: 1.6, color: darkMode ? '#1f3a30' : 'text.secondary' }}>
+          {resource.desc}
+        </Typography>
+      </CardContent>
 
-              <Divider />
-              
-              <Box sx={{ p: 2, bgcolor: '#f9fbf9' }}>
-                <Button 
-                  fullWidth
-                  variant="contained" 
-                  href={resource.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  endIcon={<Launch sx={{ fontSize: 14 }} />}
-                  sx={{ 
-                    bgcolor: '#1f3a30', 
-                    borderRadius: 2,
-                    textTransform: 'none',
-                    '&:hover': { bgcolor: '#2d5445' }
-                  }}
-                >
-                  Open Resource
-                </Button>
-              </Box>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-
-      <Paper sx={{ mt: 8, p: 3, bgcolor: '#f4f7f4', borderRadius: 4, textAlign: 'center', border: '1px dashed #ccc' }}>
+      <Divider sx={{ borderColor: darkMode ? '#444' : 'divider' }} />
+      
+      <Box sx={{ p: 2, bgcolor: darkMode ? '#252525' : '#f9fbf9' }}>
+        <Button 
+          fullWidth
+          variant="contained" 
+          href={resource.link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          sx={{ bgcolor: '#1f3a30', borderRadius: 2, textTransform: 'none' }}
+        >
+          Open Resource
+        </Button>
+      </Box>
+    </Card>
+  ))}
+</Box>
+      <Paper sx={{ mt: 8, p: 3, bgcolor: '#f4f7f4', borderRadius: 4, textAlign: 'center', border: '1px dashed #ccc', backgroundColor: darkMode ? '#1f3a30' : '#f4f7f4', color: darkMode ? '#ffffff' : '#1f3a30'  }}>
         <Typography variant="body2" color="text.secondary">
           <strong>Note:</strong> Some resources (SharePoint, OneNote, Boggle) require internal authentication. 
           Ensure you are logged into your <strong>Koble Systems</strong> account to gain access.

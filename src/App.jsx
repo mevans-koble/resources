@@ -67,20 +67,20 @@ export default function App() {
           <Box sx={{ p: 3, flexGrow: 1 }}>
             <Routes>
               <Route path="/" element={<Home darkMode={darkMode} />} />
-              <Route path="/about" element={<Connect />} /> 
-              <Route path="/mission" element={<Mission />} /> 
-              <Route path="/peopleprinciples" element={<PeoplePrinciples />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/customers" element={<Customers />} />
-              <Route path="/roles" element={<Roles />} />
-              <Route path="/history" element={<History />} />
+              <Route path="/about" element={<Connect darkMode={darkMode}/>} /> 
+              <Route path="/mission" element={<Mission darkMode={darkMode}/>} /> 
+              <Route path="/peopleprinciples" element={<PeoplePrinciples darkMode={darkMode}/>} />
+              <Route path="/products" element={<Products darkMode={darkMode}/>} />
+              <Route path="/customers" element={<Customers darkMode={darkMode}/>} />
+              <Route path="/roles" element={<Roles darkMode={darkMode}/>} />
+              <Route path="/history" element={<History darkMode={darkMode}/>} />
               <Route path="/glossary" element={<Glossary darkMode={darkMode} />} />
-              <Route path="/business" element={<BusinessProcess />} />
-              <Route path="/gtm-overview" element={<Overview />} />
-              <Route path="/gtm-devicesupport" element={<DeviceSupport />} />
-              <Route path="/gtm-compland" element={<CompLand />} /> 
-              <Route path="/gtm-strengths" element={<Strengths />} />
-              <Route path="/customizations" element={<Customizations />} />
+              <Route path="/business" element={<BusinessProcess darkMode={darkMode} />} />
+              <Route path="/gtm-overview" element={<Overview darkMode={darkMode} />} />
+              <Route path="/gtm-devicesupport" element={<DeviceSupport darkMode={darkMode} />} />
+              <Route path="/gtm-compland" element={<CompLand darkMode={darkMode} />} /> 
+              <Route path="/gtm-strengths" element={<Strengths darkMode={darkMode} />} />
+              <Route path="/customizations" element={<Customizations darkMode={darkMode} />} />
               <Route path="/knowledge" element={<KnowledgeBase darkMode={darkMode} />} />
               <Route path="/tools" element={<Tools darkMode={darkMode} />} />
             </Routes>

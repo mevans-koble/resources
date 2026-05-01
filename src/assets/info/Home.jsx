@@ -17,7 +17,7 @@ import {
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 
-const Home = () => {
+const Home = ({ darkMode }) => {
   const sections = [
     {
       title: "Knowledge Base",
@@ -25,7 +25,7 @@ const Home = () => {
       desc: "Centralized access to EBMS guides, Boggle, SharePoint libraries, and team OneNote.",
       path: "/knowledge",
       icon: <LibraryBooks sx={{ fontSize: 32 }} />,
-      color: "#2c5282" // Professional Blue
+      color: "#2c5282" 
     },
      {
       title: "System Tools",
@@ -33,7 +33,7 @@ const Home = () => {
       desc: "Direct links to Salesforce, Landis, Cloudflare, Azure Repos, and API monitoring.",
       path: "/tools",
       icon: <Build sx={{ fontSize: 32 }} />,
-      color: "#95ab63" // Koble Light Green
+      color: "#95ab63" 
     },
     {
       title: "Koble Connect",
@@ -41,7 +41,7 @@ const Home = () => {
       desc: "Our mission, people principles, and the history that defines our company identity.",
       path: "/about",
       icon: <Description sx={{ fontSize: 32 }} />,
-      color: "#1f3a30" // Koble Dark Green
+      color: "#1f3a30" 
     },
    
   ];
@@ -53,6 +53,10 @@ const Home = () => {
       { title: "Competitors", path: "/gtm-compland", icon: <CompareArrows /> },
       { title: "Strengths", path: "/gtm-strengths", icon: <FitnessCenterIcon /> },
   ];
+
+  const sortedQuickLinks = [...quickLinks].sort((a, b) => 
+  a.title.localeCompare(b.title)
+);
 
   return (
     <Container maxWidth="lg" sx={{ mt: 8, mb: 8 }}>
@@ -82,7 +86,8 @@ const Home = () => {
                 borderRadius: 4, 
                 transition: '0.3s',
                 border: `1px solid #e0e0e0`,
-                '&:hover': { transform: 'translateY(-8px)', boxShadow: '0 12px 30px rgba(0,0,0,0.1)' }
+                '&:hover': { transform: 'translateY(-8px)', boxShadow: '0 12px 30px rgba(0,0,0,0.1)' },
+                backgroundColor: darkMode ? '#b9b8b8' : '#ffffff'
               }}
             >
               <CardActionArea component={RouterLink} to={pillar.path} sx={{ p: 4, height: '100%' }}>
@@ -123,7 +128,7 @@ const Home = () => {
         </Divider>
 
         <Grid container spacing={3} justifyContent="center" sx={{justifyContent: 'center'}}>
-          {quickLinks.map((link, i) => (
+          {sortedQuickLinks.map((link, i) => (
             <Grid item xs={6} sm={3} key={i} sx={{ display: 'flex', justifyContent: 'center' }}>
               <Paper
                 component={RouterLink}
@@ -138,7 +143,8 @@ const Home = () => {
                   textDecoration: 'none',
                   color: '#1f3a30',
                   transition: '0.2s',
-                  '&:hover': { bgcolor: '#f4f7f4', borderColor: '#95ab63' }
+                  '&:hover': { bgcolor: '#f4f7f4', borderColor: '#95ab63' },
+                  backgroundColor: darkMode ? '#b9b8b8' : '#ffffff'
                 }}
               >
                 <Box sx={{ mb: 1, color: '#95ab63' }}>{link.icon}</Box>

@@ -9,7 +9,7 @@ import {
   Construction, Close, Business, ReportProblem, Build, CheckCircle
 } from '@mui/icons-material';
 
-const Customizations = () => {
+const Customizations = ({darkMode}) => {
   // State for Dialog
   const [open, setOpen] = useState(false);
   const [selectedCase, setSelectedCase] = useState(null);
@@ -91,7 +91,7 @@ const Customizations = () => {
 
       <Grid container justifyContent="center" sx={{ mb: 8, justifyContent: 'center' }}>
         <Grid item xs={12} md={10}>
-          <Paper elevation={0} sx={{ p: 4, bgcolor: '#f4f7f4', borderRadius: 4, border: '1px solid #e0e0e0', textAlign: 'center' }}>
+          <Paper elevation={0} sx={{ p: 4, bgcolor: darkMode ? '#b9b8b8' : '#f4f7f4', borderRadius: 4, border: '1px solid #e0e0e0', textAlign: 'center' }}>
             <AutoFixHigh sx={{ color: '#95ab63', mb: 2, fontSize: 40 }} />
             <Typography variant="h5" fontWeight="bold" gutterBottom color="#1f3a30">
               Adapting Core Power to Unique Needs
@@ -107,7 +107,7 @@ const Customizations = () => {
 
       <Grid container spacing={4}  sx={{ mb: 8, justifyContent: 'center' }}>
         <Grid item xs={12} sm={6} md={4}>
-          <Card variant="outlined" sx={{ height: '100%', width:"250px",textAlign: 'center', borderRadius: 4 }}>
+          <Card variant="outlined" sx={{ height: '100%', width:"250px",textAlign: 'center', borderRadius: 4, bgcolor: darkMode ? '#b9b8b8' : '#f9fbf9' }}>
             <CardContent>
               <Analytics color="primary" sx={{ mb: 1 }} />
               <Typography variant="h6" fontWeight="bold">Monthly Target</Typography>
@@ -151,6 +151,7 @@ const Customizations = () => {
                 textAlign: 'center', 
                 cursor: 'pointer',
                 transition: '0.3s',
+                bgcolor: darkMode ? '#b9b8b8' : '#f9fbf9',
                 '&:hover': { bgcolor: '#f4f7f4', transform: 'translateY(-4px)', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }
             }}
             >

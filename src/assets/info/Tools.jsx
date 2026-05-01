@@ -26,7 +26,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 
-const Tools = () => {
+const Tools = ({darkMode}) => {
   const tools = [
     {
       title: "Salesforce",
@@ -193,7 +193,7 @@ const Tools = () => {
                 flexDirection: 'column',
                 transition: '0.3s',
                 '&:hover': { transform: 'translateY(-4px)', boxShadow: '0 8px 24px rgba(0,0,0,0.1)' },
-                
+                bgcolor: darkMode ? '#b9b8b8' : '#ffffff',
             }}
             >
               <CardContent sx={{ flexGrow: 1, p: 3 }}>
@@ -218,7 +218,7 @@ const Tools = () => {
 
               <Divider />
               
-              <Box sx={{ p: 2, bgcolor: '#f9fbf9' }}>
+              <Box sx={{ p: 2, bgcolor: darkMode ? '#252525' : '#f9fbf9' }}>
                 <Button 
                   fullWidth
                   variant="contained" 
@@ -243,7 +243,7 @@ const Tools = () => {
       </Grid>
 
       <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
-        <Paper sx={{ p: 3, bgcolor: '#f4f7f4', borderRadius: 4, textAlign: 'center', maxWidth: 800, width: '100%', border: '1px dashed #ccc' }}>
+        <Paper sx={{ p: 3, bgcolor: darkMode ? '#1f3a30' : '#f4f7f4', borderRadius: 4, textAlign: 'center', maxWidth: 800, width: '100%', border: '1px dashed #ccc', color: darkMode ? '#ffffff' : '#1f3a30' }}>
           <Stack direction="row" spacing={1} justifyContent="center" alignItems="center">
             <Typography variant="body2" color="text.secondary">
               Most tools require <strong>Single Sign-On (SSO)</strong> or specific Azure DevOps / Salesforce permissions. 
