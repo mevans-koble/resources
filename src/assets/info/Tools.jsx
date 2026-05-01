@@ -19,6 +19,12 @@ import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
 import LockPersonIcon from '@mui/icons-material/LockPerson';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import AssessmentIcon from '@mui/icons-material/Assessment';
 
 const Tools = () => {
   const tools = [
@@ -113,8 +119,54 @@ const Tools = () => {
       link: "https://dev.azure.com/koblesystems/ebms-2XX/_versionControl",
       icon: <Code sx={{ color: '#0078d4' }} />,
       tag: "Development"
-    }
+    },
+    {
+      title: "Expensify",
+      desc: "Platform for managing corporate expenses, receipt tracking, and employee reimbursements.",
+      link: "https://www.expensify.com/",
+      icon: <ReceiptLongIcon sx={{ color: '#ff5c4b' }} />, 
+      tag: "Finance"
+    },
+    {
+      title: "Payrix",
+      desc: "Merchant portal (Worldpay for Platforms) for managing payment processing and platform-level transactions.",
+      link: "https://portal.worldpayforplatforms.com/Login.aspx",
+      icon: <AccountBalanceIcon sx={{ color: '#004a99' }} />, 
+      tag: "Payments"
+    },
+    {
+      title: "Plaid",
+      desc: "API infrastructure for connecting bank accounts to EBMS and Koble financial services.",
+      link: "https://plaid.com/",
+      icon: <SettingsInputComponentIcon sx={{ color: '#000000' }} />, 
+      tag: "Integration"
+    },
+    {
+      title: "SightStream",
+      desc: "Worldpay visibility tool for monitoring transaction health and payment data streams.",
+      link: "https://sightstream.worldpay.com/login",
+      icon: <VisibilityIcon sx={{ color: '#00bfa5' }} />, 
+      tag: "Monitoring"
+    },
+    {
+      title: "Verifone Jira",
+      desc: "Dedicated Verifone service desk for logging hardware tickets and technical support requests.",
+      link: "https://jiraservicedesk.verifone.com/servicedesk/customer/portal/1",
+      icon: <SupportAgentIcon sx={{ color: '#2684ff' }} />, 
+      tag: "Support"
+    },
+    {
+      title: "EBMS Upgrade History",
+      desc: "Analytical dashboard tracking version deployments, upgrade timelines, and legacy software distribution across the client base.",
+      link: "https://app.powerbi.com/groups/cda17dd6-822b-496b-a377-83d5508914cb/reports/aaf9b750-0d4b-4df2-95ea-ee789b23ff84/ReportSection8e52ec0a711e6f373862?experience=power-bi",
+      icon: <AssessmentIcon sx={{ color: '#f2c811' }} />, 
+      tag: "Analytics"
+    },
   ];
+
+  const sortedTools = [...tools].sort((a, b) => 
+  a.title.localeCompare(b.title)
+);
 
   return (
     <Container maxWidth="lg" sx={{ mt: 5, mb: 8,  }}>
@@ -129,7 +181,7 @@ const Tools = () => {
       </Box>
 
       <Grid container spacing={3} justifyContent="center" sx={{justifyContent: 'center'}}>
-        {tools.map((tool, i) => (
+        {sortedTools.map((tool, i) => (
           <Grid item key={i} sx={{ display: 'flex', justifyContent: 'center', flex: '0 0 auto', width: { xs: '100%', sm: '320px' } }}>
             <Card 
               variant="outlined" 
