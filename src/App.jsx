@@ -56,8 +56,8 @@ export default function App() {
             overflowY: 'auto', 
             display: 'flex',
             flexDirection: 'column',
-            // 2. Dark Mode Conditional Styling (Isolated to the middle)
-            backgroundColor: darkMode ? '#121212' : '#ffffff',
+            // Dark Mode
+            backgroundColor: darkMode ? '#313131' : '#ffffff',
             color: darkMode ? '#ffffff' : '#000000',
             transition: 'background-color 0.3s ease, color 0.3s ease'
           }}
