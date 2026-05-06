@@ -25,8 +25,9 @@ import {
   Engineering,
   TrendingUp
 } from '@mui/icons-material';
+import PageNavigation from '../../components/PageNavigation';
 
-const Customers = () => {
+const Customers = ({ darkMode }) => {
   const industries = [
     {
       title: "Manufacturing & Supply Chain",
@@ -57,6 +58,13 @@ const Customers = () => {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 5, mb: 8 }}>
+      <PageNavigation 
+          darkMode={darkMode}
+          prevPath="/products" 
+          prevLabel=" Our Products" 
+          nextPath="/history" 
+          nextLabel=" Our History" 
+        />
       <Box sx={{ mb: 6, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
         <Typography variant="h3" fontWeight="800" color="#1f3a30" gutterBottom>
                 Our Customers

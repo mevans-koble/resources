@@ -6,8 +6,9 @@ import {
 import { 
   Security, Router, Storage, Person, AdminPanelSettings, Lan, OpenInNew 
 } from '@mui/icons-material';
+import PageNavigation from '../../components/PageNavigation';
 
-const DeviceSupport = () => {
+const DeviceSupport = ({ darkMode }) => {
   const tools = [
     {
       title: "DrawBridge",
@@ -29,6 +30,13 @@ const DeviceSupport = () => {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 5, mb: 8 }}>
+      <PageNavigation 
+          darkMode={darkMode}
+          prevPath="/gtm-overview" 
+          prevLabel=" Overview" 
+          nextPath="/gtm-compland" 
+          nextLabel=" Competitive Landscape" 
+        />
       <Box sx={{ 
         mb: 6, 
         display: "flex", 

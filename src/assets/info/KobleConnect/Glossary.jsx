@@ -20,6 +20,7 @@ import {
   Terminal, 
   Handshake 
 } from '@mui/icons-material';
+import PageNavigation from '../../components/PageNavigation';
 
 const Term = ({ title, definition, abbreviation }) => (
   <Box sx={{ mb: 2 }}>
@@ -37,7 +38,7 @@ const Term = ({ title, definition, abbreviation }) => (
   </Box>
 );
 
-const Glossary = () => {
+const Glossary = ( { darkMode }) => {
   const sections = [
     {
       title: "Sales & Order Processing",
@@ -92,6 +93,13 @@ const Glossary = () => {
 
   return (
     <Container maxWidth="md" sx={{ mt: 5, mb: 8 }}>
+      <PageNavigation 
+          darkMode={darkMode}
+          prevPath="/history" 
+          prevLabel=" Our History" 
+          nextPath="/business" 
+          nextLabel=" Business Processes" 
+        />
       <Box sx={{ mb: 6, textAlign: 'center' }}>
         <Typography variant="h3" fontWeight="800" color="#1f3a30" gutterBottom>
           Glossary of Terms

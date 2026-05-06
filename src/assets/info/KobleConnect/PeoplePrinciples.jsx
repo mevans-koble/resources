@@ -21,8 +21,9 @@ import {
   OpenInNew, 
   Groups 
 } from '@mui/icons-material';
+import PageNavigation from '../../components/PageNavigation';
 
-const OrgStructure = () => {
+const OrgStructure = ({ darkMode }) => {
   const principles = [
     { title: "Lead from the front", desc: "Leaders cheerfully go first. They take the initiative and leave an example that others will want to follow, asking the questions that need to be asked, and leading the charge towards the end goal (even if it isn’t a sure win)." },
     { title: "Embrace a bias for action", desc: "Leaders understand that speed matters. They embrace calculated risks, recognizing progress doesn’t happen in the meeting room but in the laboratory of customer interaction." },
@@ -41,6 +42,13 @@ const OrgStructure = () => {
 
   return (
     <Container maxWidth="md" sx={{ mt: 5, mb: 8 }}>
+      <PageNavigation 
+          darkMode={darkMode}
+          prevPath="/mission" 
+          prevLabel=" Mission & Pillars" 
+          nextPath="/products" 
+          nextLabel=" Our Products" 
+        />
       <Box sx={{ mb: 6, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
         <Typography variant="h3" fontWeight="800" color="#1f3a30" gutterBottom>
           Structure & Leadership

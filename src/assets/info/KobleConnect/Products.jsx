@@ -18,8 +18,9 @@ import {
   CloudDone, 
   Phonelink 
 } from '@mui/icons-material';
+import PageNavigation from '../../components/PageNavigation';
 
-const Products = () => {
+const Products = ({ darkMode }) => {
   const products = [
     {
       title: "EBMS",
@@ -52,6 +53,13 @@ const Products = () => {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 5, mb: 8, }}>
+      <PageNavigation 
+          darkMode={darkMode}
+          prevPath="/peopleprinciples" 
+          prevLabel=" People and Principles" 
+          nextPath="/customers" 
+          nextLabel=" Our Customers" 
+        />
       <Box sx={{ mb: 6, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
         <Typography variant="h3" fontWeight="800" color="#1f3a30" gutterBottom>
           Our Products

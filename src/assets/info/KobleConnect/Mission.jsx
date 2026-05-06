@@ -18,8 +18,9 @@ import {
   Autorenew, 
 } from '@mui/icons-material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import PageNavigation from '../../components/PageNavigation';
 
-const MissionPillars = () => {
+const MissionPillars = ({darkMode}) => {
   const values = [
     {
       title: "Bless the Customer",
@@ -61,6 +62,13 @@ const MissionPillars = () => {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 5, mb: 8 }}>
+      <PageNavigation 
+          darkMode={darkMode}
+          prevPath="/about" 
+          prevLabel=" Intro" 
+          nextPath="/peopleprinciples" 
+          nextLabel=" People and Principles" 
+        />
       <Box sx={{ mb: 8, textAlign: 'center' }}>
       
         <Typography variant="h3" component="h2" gutterBottom fontWeight="800" color="#1f3a30">

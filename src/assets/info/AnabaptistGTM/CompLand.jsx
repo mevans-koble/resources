@@ -8,6 +8,7 @@ import {
   ExpandMore, Gavel, CompareArrows, Verified, 
   Block,  Language, Storage, CloudQueue, Terminal
 } from '@mui/icons-material';
+import PageNavigation from '../../components/PageNavigation';
 
 const CompetitorCard = ({ name, share, status, strengths, winStrategy, icon }) => (
   <Card variant="outlined" sx={{ height: '100%', width:"600px",borderRadius: 4, display: 'flex', flexDirection: 'column' }}>
@@ -39,9 +40,16 @@ const CompetitorCard = ({ name, share, status, strengths, winStrategy, icon }) =
   </Card>
 );
 
-const CompetitiveLandscape = () => {
+const CompetitiveLandscape = ({ darkMode }) => {
   return (
     <Container maxWidth="lg" sx={{ mt: 5, mb: 8 }}>
+      <PageNavigation 
+          darkMode={darkMode}
+          prevPath="/gtm-devicesupport" 
+          prevLabel=" Device Support" 
+          nextPath="/gtm-strengths" 
+          nextLabel=" Strengths" 
+        />
       <Box sx={{ mb: 6, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
         <Typography variant="h3" fontWeight="800" color="#1f3a30" gutterBottom>
           Competitive Landscape

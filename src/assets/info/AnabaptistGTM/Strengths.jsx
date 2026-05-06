@@ -8,6 +8,7 @@ import {
   Groups, Construction, 
 } from '@mui/icons-material';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import PageNavigation from '../../components/PageNavigation';
 
 const StrengthBlock = ({ icon, title, description, testimonial, author, company, color = "#1f3a30" }) => (
   <Box sx={{ mb: 10, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', }}>
@@ -55,9 +56,16 @@ const StrengthBlock = ({ icon, title, description, testimonial, author, company,
   </Box>
 );
 
-const Strengths = () => {
+const Strengths = ({ darkMode }) => {
   return (
     <Container maxWidth="md" sx={{ mt: 5, mb: 8,  }}>
+      <PageNavigation 
+          darkMode={darkMode}
+          prevPath="/gtm-compland" 
+          prevLabel=" Competitive Landscape" 
+          nextPath="/" 
+          nextLabel=" Home" 
+        />
       <Box sx={{ mb: 10, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", }}>
         <Typography variant="h3" fontWeight="800" color="#1f3a30" gutterBottom>
           Our Key Strengths

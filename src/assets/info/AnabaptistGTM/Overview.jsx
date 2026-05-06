@@ -9,10 +9,18 @@ import {
   Warning, Biotech, Assessment, Payments, Factory, 
   LocalShipping, Psychology, Description
 } from '@mui/icons-material';
+import PageNavigation from '../../components/PageNavigation';
 
-const GTMOverview = () => {
+const GTMOverview = ({ darkMode }) => {
   return (
     <Container maxWidth="lg" sx={{ mt: 5, mb: 8 }}>
+      <PageNavigation 
+          darkMode={darkMode}
+          prevPath="/" 
+          prevLabel=" Home" 
+          nextPath="/gtm-devicesupport" 
+          nextLabel=" Device Support" 
+        />
       <Box sx={{ mb: 6, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
         
         <Typography variant="h3" fontWeight="800" color="#1f3a30" gutterBottom>

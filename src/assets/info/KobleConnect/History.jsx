@@ -19,8 +19,9 @@ import {
   LocationOn,
   TrendingUp
 } from '@mui/icons-material';
+import PageNavigation from '../../components/PageNavigation';
 
-const TimelineItem = ({ year, title, description, icon, isLast }) => (
+const TimelineItem = ({ year, title, description, icon, isLast,  }) => (
   <Box sx={{ display: 'flex', mb: isLast ? 0 : 4 }}>
     <Stack alignItems="center" sx={{ mr: 3 }}>
       <Box 
@@ -48,7 +49,7 @@ const TimelineItem = ({ year, title, description, icon, isLast }) => (
   </Box>
 );
 
-const History = () => {
+const History = ({ darkMode }) => {
   const isMobile = useMediaQuery('(max-width:600px)');
 
   const milestones = [
@@ -98,6 +99,13 @@ const History = () => {
 
   return (
     <Container maxWidth="md" sx={{ mt: 5, mb: 8 }}>
+      <PageNavigation 
+          darkMode={darkMode}
+          prevPath="/customers" 
+          prevLabel=" Our Customers" 
+          nextPath="/glossary" 
+          nextLabel=" Glossary" 
+        />
       {/* HERO SECTION */}
       <Box sx={{ mb: 8, textAlign: 'center' }}>
         <Typography variant="h3" fontWeight="800" color="#1f3a30" gutterBottom>

@@ -5,6 +5,7 @@ import {
 } from '@mui/material';
 import { Groups } from '@mui/icons-material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import PageNavigation from '../../components/PageNavigation';
 
 const Roles = () => {
   const leadership = [

@@ -15,8 +15,9 @@ import {
   AccountTree, 
   Stars 
 } from '@mui/icons-material';
+import PageNavigation from '../../components/PageNavigation';
 
-const KobleConnect = () => {
+const KobleConnect = ({darkMode}) => {
   const highlightItems = [
     { text: "Company mission, values, and vision", icon: <Stars color="primary" /> },
     { text: "Organizational structure", icon: <AccountTree color="primary" /> },
@@ -26,6 +27,13 @@ const KobleConnect = () => {
 
   return (
     <Container maxWidth="md" sx={{ mt: 5, mb: 5 }}>
+      <PageNavigation 
+          darkMode={darkMode}
+          prevPath="/" 
+          prevLabel=" Home" 
+          nextPath="/mission" 
+          nextLabel=" Mission & Pillars" 
+        />
       <Box sx={{ mb: 6, textAlign: 'center' }}>
         <Typography variant="h3" component="h1" gutterBottom fontWeight="800" color="#1f3a30">
           Koble Connect

@@ -8,6 +8,7 @@ import {
   DashboardCustomize, AutoFixHigh, Analytics, Handshake, 
   Construction, Close, Business, ReportProblem, Build, CheckCircle
 } from '@mui/icons-material';
+import PageNavigation from '../../components/PageNavigation';
 
 const Customizations = ({darkMode}) => {
   // State for Dialog
