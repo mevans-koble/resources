@@ -35,7 +35,7 @@ const Tools = ({ darkMode }) => {
 
         {/* Search Bar */}
         <TextField
-          placeholder="Search by name, tag, or function..."
+          placeholder="Search by name, or tag"
           variant="outlined"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
