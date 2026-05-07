@@ -13,6 +13,7 @@ import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputCompone
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import AssessmentIcon from '@mui/icons-material/Assessment';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export const toolsData = [
     {
@@ -42,6 +43,13 @@ export const toolsData = [
       link: "https://app.fizzy.do/6102307/",
       icon: <BarChart sx={{ color: '#e4405f' }} />,
       tag: "PM Tool"
+    },
+   {
+      title: "GitHub",
+      desc: "Cloud-based hosting service for version control and collaborative software development using Git.",
+      link: "https://github.com/koblesystems",
+      icon: <GitHubIcon sx={{ color: '#24292e' }} />, 
+      tag: "Source Control"
     },
     {
       title: "Fizzibility",
@@ -106,13 +114,13 @@ export const toolsData = [
       icon: <Code sx={{ color: '#0078d4' }} />,
       tag: "Development"
     },
-    {
-      title: "Expensify",
-      desc: "Platform for managing corporate expenses, receipt tracking, and employee reimbursements.",
-      link: "https://www.expensify.com/",
-      icon: <ReceiptLongIcon sx={{ color: '#ff5c4b' }} />, 
-      tag: "Finance"
-    },
+    // {
+    //   title: "Expensify",
+    //   desc: "Platform for managing corporate expenses, receipt tracking, and employee reimbursements.",
+    //   link: "https://www.expensify.com/",
+    //   icon: <ReceiptLongIcon sx={{ color: '#ff5c4b' }} />, 
+    //   tag: "Finance"
+    // },
     {
       title: "Payrix",
       desc: "Merchant portal (Worldpay for Platforms) for managing payment processing and platform-level transactions.",
