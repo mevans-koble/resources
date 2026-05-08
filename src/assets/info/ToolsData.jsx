@@ -101,9 +101,9 @@ export const toolsData = [
       tag: "Merchant"
     },
     {
-      title: "Verifone Web Pay Admin",
+      title: "Web Pay",
       desc: "Administrative portal for managing legacy Web Pay integrations and client-specific transaction settings.",
-      link: "https://webpay.eaglebusinesssoftware.com/clientadmin/login",
+      link: "https://webpay.koblesystems.com/ClientAdmin/login",
       icon: <PointOfSaleIcon sx={{ color: '#f38020' }} />, 
       tag: "Processing"
     },
